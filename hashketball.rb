@@ -2,6 +2,7 @@ require 'pry'
 
 def game_hash
   {
+
   home: {
     team_name: "Brooklyn Nets",
     colors: ["Black", "White"],
@@ -144,6 +145,7 @@ def game_hash
       }
     ]
   }
+
 }
 end
 
@@ -165,6 +167,7 @@ def find_player(player_name)
   players_array.find { |player_hash| player_hash[:player_name] == player_name}
 end
 
+
 def shoe_size(player_name)
   found_player = find_player(player_name)
   found_player[:shoe]
@@ -178,18 +181,20 @@ def team_colors(team_name)
 
 
 
+
+
+
 end
 
 def team_names
   game_hash.values.map { |team_info| team_info[:team_name] }.flatten
 
 
+
 end
-def player_numbers(team)
 
-
-
-
+def player_numbers(teams)
+  game_hash.values { |team_info| team_info[:number] }.flatten.sort
 
 
 
@@ -198,25 +203,28 @@ end
 
 
 def player_stats(player_name)
+  found_player = find_player(player_name)
+ found_player[:number][:shoe][:points][:rebounds][:assists][:steals][:blocks][:slam_dunks]
+
 
 
 end
 
-
-
-
 def big_shoe_rebounds
-  
 
-   end
+end
 
 # First, find the player with the largest shoe size
   #Then, return that player's number of rebounds
-
 def most_points_scored
 
 
 end
+
+
+
+
+
 
 #def winning_team()
   # Which team has the most points?
