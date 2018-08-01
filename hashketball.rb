@@ -192,8 +192,7 @@ end
 
 
 def player_stats(player_name)
-  found_player = find_player_stats(player_name)
-  found_player[:player_stats]
+  
 
 
 
