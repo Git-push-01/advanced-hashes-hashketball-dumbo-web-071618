@@ -150,8 +150,14 @@ def game_hash
 end
 
 def num_points_scored(player_name)
- found_player = find_player(player_name)
- found_player[:points]
+  game_hash.each do |team, team_data|
+     team_data[:players].each do |player|
+       if player[:player_name] == player_name
+         return player[:points]
+       end
+end
+end
+
 
 end
 def players_array
@@ -171,39 +177,50 @@ end
 
 
 def team_colors(team_name)
-  game_hash.values.map { |team_info| team_info[:colors] }.flatten
+  game_hash.values.map do |team|
+    #binding.pry
+    if team[:team_name] == team_name
+      return team[:colors]
+
+
+
+end
+end
+
+
+
 
 end
 
 def team_names
-  game_hash.values.map { |team_info| team_info[:team_name] }.flatten
+  game_hash.values.map {|team| team[:team_name]}.flatten
+
+    #binding.pry
+
+end
+
+
+
+def player_numbers(teams_name)
+  game_hash.values.each  do |team|
+  if team[:teams_name] == teams_name
+    return team[:number]
+
+
+
+
 
 
 
 end
-
-def player_numbers(teams)
-  game_hash.values.map { |team_info| team_info[:number] }.sort
-
-
-
 
 end
 
 
 def player_stats(player_name)
-  
-
-
-
 end
 
 def big_shoe_rebounds
-
-
-
-
-
 
 end
 
