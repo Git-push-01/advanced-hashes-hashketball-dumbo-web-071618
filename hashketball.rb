@@ -169,6 +169,17 @@ def find_player(player_name)
 end
 
 
+
+def player_by_number(number)
+  players_array.find {|player_hash| player_hash[:number] == number}[:player_name]
+
+    
+
+
+
+end
+
+
 def shoe_size(player_name)
   found_player = find_player(player_name)
   found_player[:shoe]
@@ -184,10 +195,10 @@ def team_colors(team_name)
 
 
 
-end
+
 end
 
-
+end
 
 
 end
@@ -201,18 +212,13 @@ end
 
 
 
-def player_numbers(teams_name)
-  game_hash.values.each  do |team|
-  if team[:teams_name] == teams_name
-    return team[:number]
+def player_numbers(team_name)
 
 
 
 
 
 
-
-end
 
 end
 
